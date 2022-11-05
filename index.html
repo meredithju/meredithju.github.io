@@ -116,18 +116,6 @@
   </script>
 
   <script>
-    // function loadJS(u) {
-    //   var r = document.getElementsByTagName("script")[0],
-    //       s = document.createElement("script");
-    //   s.src = u;
-    //   r.parentNode.insertBefore(s, r)
-    // }
-
-    // if (!window.HTMLPictureElement) {
-    //     loadJS("https://d3s2irdjyrlkk2.cloudfront.net/js/vendor/lazysizes/ls.respimg.min.js?id=1");
-    //   }
-  </script>
-  <script>
     //add simple support for background images:
     document.addEventListener('lazybeforeunveil', function (e) {
       var bg = e.target.getAttribute('data-bg');
@@ -210,8 +198,7 @@
 
 
 
-  <link rel="stylesheet" media="all" type="text/css"
-    href="https://d3s2irdjyrlkk2.cloudfront.net/user-css-create/999999/37729.css?id=1665705611">
+  <link rel="stylesheet" media="all" type="text/css" href="37729.css">
 
 
 
@@ -278,7 +265,7 @@
 
 
             <li class="nav-list-common js-nav-list-common ">
-              <a class="cur-active-link    " href="/home">HOME
+              <a class="cur-active-link    " href="#home">HOME
               </a>
             </li>
 
@@ -292,19 +279,19 @@
 
 
             <li class="nav-list-common js-nav-list-common is-dropdown">
-              <a class="    " href="javascript:void(0)" style="color:#44546a;">EXPERIENCE
+              <a class="    " href="#experience" style="color:#44546a;">EXPERIENCE
               </a>
             </li>
 
 
 
             <li class="nav-list-common js-nav-list-common is-dropdown">
-              <a class="    " href="javascript:void(0)" style="color:#44546a;">KNOWLEDGE
+              <a class="    " href="#knowledge" style="color:#44546a;">KNOWLEDGE
               </a>
             </li>
 
             <li class="nav-list-common js-nav-list-common ">
-              <a class="    " href="/contact" style="color:#44546a;">CONTACT
+              <a class="    " href="#contact" style="color:#44546a;">CONTACT
               </a>
 
 
@@ -460,7 +447,7 @@
         </style>
 
 
-        <div id="" class="is-wrapper js-distil-container js-distil-container  ">
+        <div id="home" class="is-wrapper js-distil-container js-distil-container  ">
 
 
           <?xml encoding="utf-8" ?>
@@ -572,7 +559,7 @@
 
           <div class="is-section is-default-text is-section-75">
 
-            <div class="is-boxes">
+            <div id="experience" class="is-boxes">
 
               <div class="is-box is-align-left is-bg-grey is-light-text is-box-8">
 
@@ -658,7 +645,7 @@
 
           </div>
 
-          <div class="is-section is-section-100 is-box is-align-center is-light-text">
+          <div id="knowledge" class="is-section is-section-100 is-box is-align-center is-light-text">
             <div class="is-overlay parallaxslidercheck" id="slide-MHGZWGz">
               <div class="is-overlay-bg bcg parallaxslider" data-center="background-position: 50% 0px"
                 data-top-bottom="background-position: 50% -100px" data-bottom-top="background-position: 50% 100px"
@@ -732,7 +719,7 @@
     </div>
     <div class="clearfix"></div>
 
-    <div class="footer-spacing u37729-footer-bg-color">
+    <div id="contact" class="footer-spacing u37729-footer-bg-color">
 
 
       <div class="clearfix"></div>
