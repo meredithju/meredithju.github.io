@@ -2410,21 +2410,21 @@ body {
 }
 
 @media all and (max-width:767px) {
-  .is-section:not(.is-box) {
-    height: auto !important
-  }
+  .is-section:not(.is-box) {}
 
   .is-section-imagelist .is-boxes {
-    overflow: hidden
+    overflow: scroll
   }
 
   .is-boxes {
     height: inherit !important;
+    overflow: scroll;
     min-height: 100%
   }
 
   .is-boxes .is-boxes {
     padding: 20px 0;
+    overflow: scroll;
     min-height: 400px
   }
 
@@ -2614,6 +2614,11 @@ body {
     margin-bottom: 7.5vh
   }
 
+  .is-wrapper-new>div.is-section-275 .is-box-centered .is-container {
+    margin-top: 27.5vh;
+    margin-bottom: 27.5vh
+  }
+
   .is-wrapper-new>div.is-section-90 .is-box-centered .is-container {
     margin-top: 9vh;
     margin-bottom: 9vh
@@ -2648,6 +2653,10 @@ body {
     margin-bottom: 15vh
   }
 
+  .is-wrapper-new>div.is-section-275 .is-content-top .is-container {
+    margin-bottom: 55vh
+  }
+
   .is-wrapper-new>div.is-section-90 .is-content-top .is-container {
     margin-bottom: 18vh
   }
@@ -2678,6 +2687,10 @@ body {
 
   .is-wrapper-new>div.is-section-75 .is-content-bottom .is-container {
     margin-top: 15vh
+  }
+
+  .is-wrapper-new>div.is-section-275 .is-content-bottom .is-container {
+    margin-top: 55vh
   }
 
   .is-wrapper-new>div.is-section-90 .is-content-bottom .is-container {
@@ -2829,7 +2842,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden
+  overflow: scroll
 }
 
 .is-overlay .is-overlay-bg {
@@ -2914,7 +2927,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   z-index: inherit
 }
 
@@ -3638,6 +3651,7 @@ body {
   .is-wrapper>div.is-section-50.is-section-height-mobile-auto,
   .is-wrapper>div.is-section-60.is-section-height-mobile-auto,
   .is-wrapper>div.is-section-75.is-section-height-mobile-auto,
+  .is-wrapper>div.is-section-275.is-section-height-mobile-auto,
   .is-wrapper>div.is-section-90.is-section-height-mobile-auto {
     height: auto;
     min-height: 100px
@@ -3692,7 +3706,7 @@ body {
 }
 
 .slick-list {
-  overflow: hidden;
+  overflow: scroll;
   margin: 0;
   padding: 0
 }

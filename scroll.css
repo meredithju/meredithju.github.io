@@ -4,7 +4,7 @@
    ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: Nixie One, cursive;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
 }
@@ -280,7 +280,7 @@ body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: Nixie One, cursive;
   font-size: 14px;
   line-height: 20px;
   color: #333
@@ -586,7 +586,8 @@ input[type="reset"] {
 label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold
+  font-weight: bold;
+  height: 25px;
 }
 
 .w-input,
@@ -2289,9 +2290,9 @@ textarea.w-select {
    ========================================================================== */
 body {
   background-color: #fff;
-  font-family: Poppins, sans-serif;
-  color: #121212;
-  font-size: 14px;
+  font-family: Nixie One, cursive;
+  color: #00474d;
+  font-size: 24px;
   line-height: 20px;
   font-weight: 600;
 }
