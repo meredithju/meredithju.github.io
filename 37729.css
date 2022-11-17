@@ -2300,8 +2300,8 @@ a.is-global-link:hover {
 
   .old-themes-css .is-wrapper-new .is-box .is-box-centered,
   .old-themes-css .is-wrapper-new .is-box .is-box-centered .dynamic-component .is-box-centered {
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: 0vw;
+    padding-right: 0vw;
   }
 }
 

@@ -2413,18 +2413,18 @@ body {
   .is-section:not(.is-box) {}
 
   .is-section-imagelist .is-boxes {
-    overflow: scroll
+    overflow: hidden
   }
 
   .is-boxes {
     height: inherit !important;
-    overflow: scroll;
+    overflow: hidden;
     min-height: 100%
   }
 
   .is-boxes .is-boxes {
     padding: 20px 0;
-    overflow: scroll;
+    overflow: hidden;
     min-height: 400px
   }
 
@@ -2842,7 +2842,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll
+  overflow: hidden
 }
 
 .is-overlay .is-overlay-bg {
@@ -2927,7 +2927,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
   z-index: inherit
 }
 
@@ -3706,7 +3706,7 @@ body {
 }
 
 .slick-list {
-  overflow: scroll;
+  overflow: hidden;
   margin: 0;
   padding: 0
 }
