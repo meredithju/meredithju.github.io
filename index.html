@@ -992,78 +992,6 @@
       }, false);
     }
 
-
-    var playerReady = false
-    window.onYouTubeIframeAPIReady = function () {
-      // console.log("onYouTubeIframeAPIReady");
-      playerReady = true;
-      $.each($('.slide_iframes'), function (key, value) {
-        // console.log('youtube id 2 ' + key + " value " , value);              
-        // console.log(key);
-        window.players[window.players_list[key]] = new YT.Player(window.players_list[key], {
-          height: '390',
-          width: '640',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      });
-    }
-
-    function onPlayerReady(event) {
-      // console.log("hey Im ready");
-      //do whatever you want here. Like, player.playVideo();  
-      // window.players[event.target.a.id].setVolume(80);
-      // window.players[event.target.a.id].playVideo();
-      event.target.setVolume(100);
-      event.target.playVideo();
-    }
-
-    function onPlayerStateChange(event) {
-      // console.log("my state changed");
-      // window.players[event.target.a.id].playVideo();
-      // console.log(event.target.a.id);
-      // window.players[event.target.a.id].mute();
-      // console.log("event.data " + event.data);
-      // if(event.data === 1) {
-      event.target.playVideo();
-      event.target.mute();
-      // }
-
-    }
-    var onCallYouTubeAutoPlay = function () {
-      // console.log('youtube id prince');
-      window.players_list = [], window.players = new Array();
-      $.each($('.slide_iframes'), function (key, value) {
-        // console.log('youtube id 0 ' + $(value).attr('id'));
-        // console.log('youtube id 1 ' + key + " value " , value);
-
-        window.players_list.push($(value).attr('id'));
-      });
-
-      // console.log("players_list" , players_list);
-      // console.log(players_list);
-
-
-      if (playerReady) {
-        onYouTubeIframeAPIReady();
-      }
-
-
-
-      var fileref = document.createElement('script');
-      fileref.setAttribute("type", "text/javascript");
-      fileref.setAttribute("async", "");
-      fileref.setAttribute("src", "https://www.youtube.com/iframe_api");
-      // setTimeout(()=>{document.getElementsByTagName("body")[0].appendChild(fileref);},500);
-      document.getElementsByTagName("body")[0].appendChild(fileref);
-    }
-
-    $(window).load(function () {
-      onCallYouTubeAutoPlay();
-    });
-
     // LG-CLOSE
     $(document).on('click', ".lg-close", function () {
       $('body').removeClass('lg-overflow-hidden');
@@ -1529,63 +1457,6 @@
       $('.inner').css('margin-left', '0%');
       $('.inner').css('display', 'inline-block');
 
-      $('.form-snippit-submit').on('click', function (event) {
-
-        if ($(event.target).hasClass('form-snippit-2'))
-          var val = $(event.target).parents('form').children().children('input, textarea');
-        else
-          var val = $(event.target).siblings('input, textarea');
-
-        var name0 = val[0].name;
-        var value0 = val[0].value;
-        var name1 = val[1].name;
-        var value1 = val[1].value;
-        //console.log(value1);
-        var name2 = val[2].name;
-        var value2 = val[2].value;
-        if (val[3] != undefined) {
-          var name3 = val[3].name;
-          var value3 = val[3].value;
-        }
-
-
-        function validateEmail(email) {
-          //console.log('23');
-          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(email);
-        }
-
-        if (value0 == '' || value1 == '' || value2 == '' || value3 == '') {
-          alert('Please fill all fields.');
-          return false;
-        } else {
-          if (!validateEmail(value1)) {
-            alert('Please enter a valid Email');
-            return false;
-          }
-        };
-
-        $(event.target).text('Sending...');
-        $(event.target).prop('disabled', true);
-        grecaptcha("6Ld1L6kdAAAAAFKzULwN6HL9mbTmYzi-kxGXwbPe", function (token) {
-          $.ajax({
-            data: { name0: name0, value0: value0, name1: name1, value1: value1, name2: name2, value2: value2, name3: name3, value3: value3, 'g_captcha_token': token },
-            type: 'POST',
-            url: '/custom-page-form?_token=gSvzKao4ivsQ4NhxA1zLWhHrfHt549Ngn9JVfiPz',
-          })
-            .done(function (data) {
-              $(event.target).parent().append('<span class="js-sendmail-thank-you" style="font-size:12px;letter-spacing: 0.1em;text-transform: uppercase;"> &nbsp; &nbsp; Thank you for contacting.</span>');
-              $('.form-snippit-submit').text('Send');
-              $('.form-snippit-submit').prop('disabled', false);
-              $('#contact-form input[type="text"],#contact-form textarea[name=message]').val('');
-              setTimeout(function () {
-                // $('#contact-form span').fadeOut();
-                $('#contact-form .js-sendmail-thank-you').remove();
-              }, 2000);
-            });
-        });
-      });
-
       $('.active-label').on('click', function () {
         $('.active-label').removeClass('active');
         $(this).addClass('active');
@@ -1671,53 +1542,6 @@
         var newHeight = $(window).height() + 70;
         $(".cover-banner-img > img, .bcgx").css("height", newHeight);
       }
-
-      $(".form-newsletter").on('submit', function () {
-        $(this).find('.js-newsletter-submit-btn').trigger("click");
-        return false;
-      });
-
-      $('.js-newsletter-submit-btn').on('click', function (event) {
-
-        var val = $(this).parents('.form-newsletter').find('input').val();
-        var email = val;
-        // var email = val.value;
-        //console.log("email" + email);
-
-        function validateEmail(email) {
-          var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(email);
-        }
-
-        var emailvalidate = $(this).parents('.form-newsletter').find('input').val();
-        if (validateEmail(emailvalidate)) {
-        } else {
-          alert('Please enter a valid Email');
-          return false;
-        }
-
-        $(event.target).text('Sending...');
-        $(event.target).prop('disabled', true);
-
-        $.ajax({
-          data: { 'email': email },
-          type: 'POST',
-          url: '/newsletter?_token=gSvzKao4ivsQ4NhxA1zLWhHrfHt549Ngn9JVfiPz',
-        })
-          .done(function (data) {
-            //console.log(data);
-            // $(event.target).parent().parent().append('<span style="font-size:12px;letter-spacing: 0.1em;text-transform: uppercase; float: left; margin: 10px 0 0;"> &nbsp; &nbsp; Thank you for subscribing.</span>');
-            $(event.target).parent().parent().append('<span class="sucess-fadeout" style="font-size:12px;letter-spacing: 0.1em;text-transform: uppercase;margin: 10px; display:inline-block"> &nbsp; &nbsp;' + (typeof window.labels != 'undefined' ? window.labels.common_thanks_for_subscribing : 'Thank you for subscribing.') + '</span>');
-            $('.js-newsletter-submit').text('Subscribe');
-            $('.js-newsletter-submit').prop('disabled', false);
-            $('.form-newsletter input').val('');
-            setTimeout(function () {
-              $('.form-newsletter .sucess-fadeout').remove();
-              $(event.target).text('Subscribe');
-              $(event.target).prop('disabled', false);
-            }, 2000);
-          });
-      });
 
 
       if (parseInt(coverDesignTrue))
@@ -1893,10 +1717,6 @@
     if (localStorage.debug)
       console.log(userObject);
   </script>
-
-
-
-
 
 
   <script src="https://d3s2irdjyrlkk2.cloudfront.net/compiled/js/vendor/jquery.Jcrop.js?id=e4cbc960251d4c44fa71"
