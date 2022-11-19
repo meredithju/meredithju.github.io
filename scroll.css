@@ -3258,7 +3258,7 @@ a {
   }
 
   .step-block {
-    min-height: 110vh;
+    min-height: 120vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -3416,6 +3416,10 @@ a {
   .steps.dots {
     padding-top: 9%;
     padding-bottom: 9%;
+  }
+
+  .step-block {
+    min-height: 100vh;
   }
 
   .social-icons {
