@@ -282,6 +282,10 @@
               <a class="    " href="#knowledge" style="color:#44546a;">KNOWLEDGE
               </a>
             </li>
+            <li class="nav-list-common js-nav-list-common is-dropdown">
+              <a class="    " href="#playground" style="color:#44546a;">PLAYGROUND
+              </a>
+            </li>
             <li class="nav-list-common js-nav-list-common ">
               <a class="    " href="#contact" style="color:#44546a;">CONTACT
               </a>
@@ -393,7 +397,7 @@
                       <h2 style="margin:0.2em 0"><span
                           style="color: rgb(256, 256, 256); background-color: rgba(0, 0, 0, 0.32);"> Hi, I'm
                           <span class="typewrite" data-period="2000"
-                            data-type='[ "Meredith Ju", "a software developer", "training for a triathlon", "an icecream enthusiast" ]'></span>
+                            data-type='[ "Meredith Ju", "a software developer", "training for a triathlon", "an ice cream enthusiast" ]'></span>
                         </span></h2>
                     </div>
                     <script>
@@ -420,7 +424,7 @@
                         this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
                         var that = this;
-                        var delta = 200 - Math.random() * 100;
+                        var delta = 100;
 
                         if (this.isDeleting) { delta /= 2; }
 
@@ -431,7 +435,7 @@
                         } else if (this.isDeleting && this.txt === '') {
                           this.isDeleting = false;
                           this.loopNum++;
-                          delta = 500;
+                          delta = 100;
                         }
 
                         setTimeout(function () {
@@ -483,8 +487,7 @@
                             collaborative and passionate people!
                           </p>
                           <p>Aside from tech, I also love exploring the outdoors by going on runs and swims. You can
-                            also find me cozying up with a good book and learning more about other experiences and
-                            cultures.
+                            also find me cozying up with a good book or making artistic bead animals~
                           </p>
                         </div>
                       </div>
@@ -890,8 +893,31 @@
               </div>
             </div>
           </div>
-
-
+          <div id="playground" class="is-section is-section-100 is-box is-align-center is-light-text">
+            <div class="is-overlay parallaxslidercheck" id="slide-MHGZWGz">
+              <div class="is-overlay-bg bcg parallaxslider" data-center="background-position: 50% 0px"
+                data-top-bottom="background-position: 50% -100px" data-bottom-top="background-position: 50% 100px"
+                style="background-image: url('pool.png'); display: block;" data-anchor-target="#slide-MHGZWGz"></div>
+              <div class="is-overlay-color" style="display: none;"></div>
+              <div class="is-overlay-content"></div>
+            </div>
+            <div class="is-boxes hsContainer">
+              <div class="is-box-centered hsContent is-content-center edge-y-4" data-bottom-top="opacity: 0"
+                data-25p-top="opacity: 0" data-top="opacity: 1" data-anchor-target="#slide-MHGZWGz">
+                <div class="row clearfix">
+                  <div class="column full">
+                    <div class="display">
+                      <h3><span style="text-align: center; color: #ffffff;">Random things that make me happy</span></h3>
+                      <div class="center button-center">
+                        <a href="/playground/index.html" class="is-btn is-btn-primary edit" title=""
+                          style="background-color: rgba(0, 0, 0, 0.75);">PLAYGROUND</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <span id="global_cache_publish_date" class="hide" data-value="1654014401"></span>
@@ -924,7 +950,8 @@
             <h5>
               <p><sup><span style="color: rgb(255, 255, 255); font-weight: normal;"><a href="#home"
                       title="">Home</a><br><a href="#about" title="">About</a><br><a href="#experience"
-                      title="">Experience</a><br><a href="#knowledge" title="">Knowledge</a></span></sup></p>
+                      title="">Experience</a><br><a href="#knowledge" title="">Knowledge</a><br><a href="#playground"
+                      title="">Playground</a></span></sup></p>
             </h5>
           </div>
           <div class="column sixth">
