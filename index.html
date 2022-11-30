@@ -282,10 +282,6 @@
               <a class="    " href="#knowledge" style="color:#44546a;">KNOWLEDGE
               </a>
             </li>
-            <li class="nav-list-common js-nav-list-common is-dropdown">
-              <a class="    " href="#playground" style="color:#44546a;">PLAYGROUND
-              </a>
-            </li>
             <li class="nav-list-common js-nav-list-common ">
               <a class="    " href="#contact" style="color:#44546a;">CONTACT
               </a>
@@ -395,9 +391,70 @@
                   <div class="row clearfix">
                     <div class="display">
                       <h2 style="margin:0.2em 0"><span
-                          style="color: rgb(256, 256, 256); background-color: rgba(0, 0, 0, 0.32);">Hi, I'm
-                          Meredith Ju!</span></h2>
+                          style="color: rgb(256, 256, 256); background-color: rgba(0, 0, 0, 0.32);"> Hi, I'm
+                          <span class="typewrite" data-period="2000"
+                            data-type='[ "Meredith Ju", "a software developer", "training for a triathlon", "an icecream enthusiast" ]'></span>
+                        </span></h2>
                     </div>
+                    <script>
+                      var TxtType = function (el, toRotate, period) {
+                        this.toRotate = toRotate;
+                        this.el = el;
+                        this.loopNum = 0;
+                        this.period = parseInt(period, 10) || 2000;
+                        this.txt = '';
+                        this.tick();
+                        this.isDeleting = false;
+                      };
+
+                      TxtType.prototype.tick = function () {
+                        var i = this.loopNum % this.toRotate.length;
+                        var fullTxt = this.toRotate[i];
+
+                        if (this.isDeleting) {
+                          this.txt = fullTxt.substring(0, this.txt.length - 1);
+                        } else {
+                          this.txt = fullTxt.substring(0, this.txt.length + 1);
+                        }
+
+                        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+                        var that = this;
+                        var delta = 200 - Math.random() * 100;
+
+                        if (this.isDeleting) { delta /= 2; }
+
+                        //finished typing everything
+                        if (!this.isDeleting && this.txt === fullTxt) {
+                          delta = this.period;
+                          this.isDeleting = true;
+                        } else if (this.isDeleting && this.txt === '') {
+                          this.isDeleting = false;
+                          this.loopNum++;
+                          delta = 500;
+                        }
+
+                        setTimeout(function () {
+                          that.tick();
+                        }, delta);
+                      };
+
+                      window.onload = function () {
+                        var elements = document.getElementsByClassName('typewrite');
+                        for (var i = 0; i < elements.length; i++) {
+                          var toRotate = elements[i].getAttribute('data-type');
+                          var period = elements[i].getAttribute('data-period');
+                          if (toRotate) {
+                            new TxtType(elements[i], JSON.parse(toRotate), period);
+                          }
+                        }
+                        // INJECT CSS
+                        var css = document.createElement("style");
+                        css.type = "text/css";
+                        css.innerHTML = ".typewrite > .wrap { border-right: 0.04em solid #fff}";
+                        document.body.appendChild(css);
+                      };
+                    </script>
                   </div>
                 </div>
               </div>
@@ -418,15 +475,17 @@
                       <div class="row clearfix">
                         <div class="column full">
                           <h2><span style="color: rgb(0, 0, 0);">About Me</span></h2>
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p>I'm Meredith, a senior at Cornell University studying Computer Science with a minor in
+                            Mathematics. My interests revolve around creating impactful data analytics software and
+                            secure database frameworks, which I have explored in my internships at Workday, Microsoft,
+                            and MarkLogic. I am also interested in exploring the logic and theory behind computing and
+                            algorithms in my academic studies. I'm excited to work with and learn more from
+                            collaborative and passionate people!
 
+                          </p>
+                          <p>Aside from tech, I also love exploring the outdoors by going on runs and swims. You can
+                            also find me cozying up with a good book and learning more about other experiences and
+                            cultures.
                           </p>
                         </div>
                       </div>
@@ -457,6 +516,9 @@
                       data-module-active="1">
                       <div id="mQUP5ZB" class="slider-on-box" style="width:100%;height:100%;">
                         <div class="is-boxes slider-image" style="background-image:url(IMG_5259.JPG);">
+                        </div>
+                        <div class="is-boxes slider-image"
+                          style="background-image:url(317497687_1263108800914366_5211104854414302462_n.jpg);">
                         </div>
 
                       </div>
@@ -826,31 +888,7 @@
             </div>
           </div>
 
-          <div id="playground" class="is-section is-section-100 is-box is-align-center is-light-text">
-            <div class="is-overlay parallaxslidercheck" id="slide-MHGZWGz">
-              <div class="is-overlay-bg bcg parallaxslider" data-center="background-position: 50% 0px"
-                data-top-bottom="background-position: 50% -100px" data-bottom-top="background-position: 50% 100px"
-                style="background-image: url('pool.png'); display: block;" data-anchor-target="#slide-MHGZWGz"></div>
-              <div class="is-overlay-color" style="display: none;"></div>
-              <div class="is-overlay-content"></div>
-            </div>
-            <div class="is-boxes hsContainer">
-              <div class="is-box-centered hsContent is-content-center edge-y-4" data-bottom-top="opacity: 0"
-                data-25p-top="opacity: 0" data-top="opacity: 1" data-anchor-target="#slide-MHGZWGz">
-                <div class="row clearfix">
-                  <div class="column full">
-                    <div class="display">
-                      <h3><span style="text-align: center; color: #ffffff;">Random things that make me happy</span></h3>
-                      <div class="center button-center">
-                        <a href="/playground.html" class="is-btn is-btn-primary edit" title=""
-                          style="background-color: rgba(0, 0, 0, 0.75);">PLAYGROUND</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
 
         <span id="global_cache_publish_date" class="hide" data-value="1654014401"></span>
@@ -883,8 +921,7 @@
             <h5>
               <p><sup><span style="color: rgb(255, 255, 255); font-weight: normal;"><a href="#home"
                       title="">Home</a><br><a href="#about" title="">About</a><br><a href="#experience"
-                      title="">Experience</a><br><a href="#knowledge" title="">Knowledge</a><br><a href="#playground"
-                      title="">Playground</a></span></sup></p>
+                      title="">Experience</a><br><a href="#knowledge" title="">Knowledge</a></span></sup></p>
             </h5>
           </div>
           <div class="column sixth">
