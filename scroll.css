@@ -3258,7 +3258,7 @@ a {
   }
 
   .step-block {
-    min-height: 120vh;
+    min-height: 200vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -3419,7 +3419,7 @@ a {
   }
 
   .step-block {
-    min-height: 110vh;
+    min-height: 180vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -3497,7 +3497,7 @@ a {
     position: relative;
     z-index: 3;
     width: 70%;
-    min-height: 50vh;
+    min-height: 100vh;
     padding-top: 100px;
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;

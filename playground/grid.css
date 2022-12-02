@@ -2327,6 +2327,7 @@ textarea.w-select {
   font-family: firstFont;
   font-size: 35px;
   padding: 16px 32px;
+  line-height: 30pt;
 }
 
 .heading {
