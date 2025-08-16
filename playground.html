@@ -17,14 +17,31 @@
   <link href="icon.png" rel="apple-touch-icon" />
 </head>
 
+<script>
+function updateTextSize() {
+  document.querySelectorAll('.collection-item').forEach(function(item) {
+    var img = item.querySelector('.img');
+    var text = item.querySelector('.text');
+    if (img && text) {
+      var imgWidth = img.offsetWidth;
+      // Set font size to 8% of image width, adjust as needed
+      text.style.fontSize = (imgWidth * 0.08) + 'px';
+    }
+  });
+}
+
+// Run on load and resize
+window.addEventListener('DOMContentLoaded', updateTextSize);
+window.addEventListener('resize', updateTextSize);
+</script>
 <body style="background-color: #c9ddf6;">
   <h1 class="heading">welcome to my playground: <br> a collection of random things that make me happy :)</h1>
   <div class="collection-list-wrapper w-dyn-list">
     <div role="listitem" class="collection-item w-dyn-item">
-      <a href="https://app.thestorygraph.com/profile/miyane1606"
-        onclick="window.open('https://app.thestorygraph.com/profile/miyane1606')" class="w-inline-block w-lightbox">
+      <a href="https://app.thestorygraph.com/profile/miyane_eau"
+        onclick="window.open('https://app.thestorygraph.com/profile/miyane_eau')" class="w-inline-block w-lightbox">
         <div class="middle">
-          <div class="text">Click to see what's on <br>my bookshelf</div>
+          <div class="text">Click to see what's<br>on my bookshelf</div>
         </div>
         <img src="playground/316761748_871309873873249_8767825034541177272_n.jpg" alt="" class="img" style="width:100%">
       </a>
@@ -36,24 +53,58 @@
         </div><img src="playground/IMG_5215.jpg" alt="" class="img" />
       </a></div>
     <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
-        <div class="middle">
-          <div class="text">Grand Prismatic <br>Spring at Yellowstone
-          </div>
-        </div><img src="playground/Screen Shot 2022-11-30 at 12.54.59 AM.png" alt="" class="img" />
+          <div class="middle">
+            <div class="text">Hiking Mission Peak
+            </div>
+          </div><img src="playground/IMG_0021 copy.jpg" alt="" class="img" />
+        </a>
       </a></div>
     <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
-        <a href="bead.html" onclick="window.open('bead.html')" class="w-inline-block w-lightbox">
           <div class="middle">
-            <div class="text">Meet Chilly the <br>Penguin! <br>Click to see the rest of <br>my collection of
-              <br>artistic bead animals~
+            <div class="text">Northern Lights<br>in Iceland
             </div>
-          </div><img src="playground/Screen Shot 2022-11-21 at 1.36.58 AM.png" alt="" class="img" />
+          </div><img src="playground/IMG_8504 copy.jpg" alt="" class="img" />
         </a>
       </a></div>
     <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
         <div class="middle">
-          <div class="text">Soft lavender</div>
+          <div class="text">Grand Prismatic<br>Spring at Yellowstone
+          </div>
+        </div><img src="playground/DSC_0072.JPG" alt="" class="img" />
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+          <div class="middle">
+            <div class="text">Gornergrat in<br>the Swiss Alps
+            </div>
+          </div><img src="playground/IMG_1106.jpg" alt="" class="img" />
+        </a>
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+          <div class="middle">
+            <div class="text">Mountain goat<br>spotted in<br>North Cascades
+            </div>
+          </div><img src="playground/Screenshot 2025-08-15 at 11.21.08 PM.png" alt="" class="img" />
+        </a>
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+        <div class="middle">
+          <div class="text">Kirkjubæjarklaustur<br>in Iceland
+          </div>
+        </div><img src="playground/DSC_0084 copy.JPG" alt="" class="img" />
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+      <a href="https://www.notion.so/On-the-Cost-of-Beauty-2518a978e3e880839d7cc461a8e1b88f"
+        onclick="window.open('https://www.notion.so/On-the-Cost-of-Beauty-2518a978e3e880839d7cc461a8e1b88f')" class="w-inline-block w-lightbox">
+        <div class="middle">
+          <div class="text">Click for thoughts on<br>the cost of beauty</div>
         </div><img src="playground/IMG_3040.jpg" alt="" class="img" />
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+      <a href="https://www.notion.so/The-Supposed-Personal-Style-2528a978e3e88014b9ecd0ef8bf53303"
+        onclick="window.open('https://www.notion.so/The-Supposed-Personal-Style-2528a978e3e88014b9ecd0ef8bf53303')" class="w-inline-block w-lightbox">
+        <div class="middle">
+          <div class="text">Click for discourse<br>on personal style</div>
+        </div><img src="playground/Screenshot 2025-08-17 at 10.22.01 AM.png" alt="" class="img" />
       </a></div>
     <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
         <div class="middle">
@@ -62,11 +113,32 @@
         <img src="playground/IMG_4969.jpg" alt="" class="img" />
       </a></div>
     <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+          <div class="middle">
+            <div class="text">Walking along<br>the Bern River
+            </div>
+          </div><img src="playground/IMG_0623 copy.jpg" alt="" class="img" />
+        </a>
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+          <div class="middle">
+            <div class="text">Open water<br>swimming in SF
+            </div>
+          </div><img src="playground/IMG_8175 copy.jpg" alt="" class="img" />
+        </a>
+      </a></div>
+    <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
+          <div class="middle">
+            <div class="text">Sunset in LA •ᴗ•
+            </div>
+          </div><img src="playground/IMG_0322.JPG" alt="" class="img" />
+        </a>
+      </a></div>
+    <!-- <div role="listitem" class="collection-item w-dyn-item"><a class="w-inline-block w-lightbox">
         <div class="middle">
           <div class="text">Frolicking in the water
           </div>
         </div><img src="playground/IMG_4805.jpg" alt="" class="img" />
-      </a></div>
+      </a></div> -->
 
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5d1e2a52ee3b9d5516966f53"
       type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
